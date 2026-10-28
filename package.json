@@ -1,0 +1,24 @@
+{
+  "name": "staffsync",
+  "version": "1.0.0",
+  "description": "Modern Human Resource Management Solution built on the MERN stack",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "seed": "node server/seeds/seedData.js"
+  },
+  "keywords": [
+    "mern",
+    "hrms",
+    "human-resources",
+    "react",
+    "express",
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "SmartBridge Experiential Learning Full Stack Track",
+  "license": "MIT"
+}
