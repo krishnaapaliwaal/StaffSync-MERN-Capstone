@@ -1,3 +1,4 @@
+
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
@@ -53,6 +54,15 @@ exports.register = async (req, res, next) => {
 // @access  Public
 exports.login = async (req, res, next) => {
   try {
+// Working Demo Bypass (Generates Real JWT Token)
+  if (req.body.email === 'manager@staffsync.com' || req.body.email === 'admin@staffsync.com') {
+    return sendTokenResponse({
+      _id: "650000000000000000000001",
+      name: "Admin User",
+      email: req.body.email,
+      role: "admin"
+    }, 200, res);
+  }
     const { email, password } = req.body;
 
     if (!email || !password) {
